@@ -4,7 +4,10 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 using Utils;
 
-public class RagdollController : MonoBehaviour, IInputListener
+
+
+
+public class RagdollController : MonoBehaviour
 {
     [SerializeField] private UDictionary<string, RagdollJoint> RagdollDict = new UDictionary<string, RagdollJoint>();
 
@@ -110,13 +113,17 @@ public class RagdollController : MonoBehaviour, IInputListener
     private Quaternion UpperLeftLegTarget;
     private Quaternion LowerLeftLegTarget;
 
+
+
+
+
+
     private static int groundLayer;
     private WaitForSeconds punchDelayWaitTime = new WaitForSeconds(0.3f);
 
     void Awake()
     {
         //cam = Camera.main;
-        InputManager.Instance.RegisterListener(this);
         groundLayer = LayerMask.NameToLayer("Ground");
         SetupJointDrives();
         SetupOriginalPose();
@@ -881,3 +888,5 @@ public class RagdollController : MonoBehaviour, IInputListener
         }
     }
 }
+
+

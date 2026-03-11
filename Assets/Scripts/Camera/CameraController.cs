@@ -32,9 +32,7 @@ public class CameraController : MonoBehaviour
     
     public void Update()
     {
-        currentX += InputManager.Instance.AimValue.x * rotateSpeed;
-        currentY += InputManager.Instance.AimValue.y * rotateSpeed;
-
+        
         currentY = Mathf.Clamp(currentY, minAngle, maxAngle);
     }
     
